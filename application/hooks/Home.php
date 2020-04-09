@@ -55,7 +55,7 @@ class Home {
                 $arrParam = array('enlace' => $ruta_validar);
                 $ruta_valida = $this->ci->mm->consultar_enlaces($arrParam);
                 //pr($ruta_valida); exit;
-                if(count($ruta_valida) > 0) {
+                if($ruta_valida) {
                     // oagarzond - 2016-05-25 - Se consulta si el usuario actual tiene permiso para ver la ruta actual
                     $arrParam = array(
                         'idPers' => $this->ci->session->userdata('id'),
