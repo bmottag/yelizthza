@@ -26,7 +26,34 @@ class General_model extends CI_Model {
         } else
             return false;
     }
-	
+
+	/**
+	 * Lista de menu
+	 * Modules: MENU
+	 * @since 30/3/2020
+	 */
+	public function get_menu($arrData) 
+	{		
+		if (array_key_exists("idMenu", $arrData)) {
+			$this->db->where('id_menu', $arrData["idMenu"]);
+		}
+		if (array_key_exists("menuType", $arrData)) {
+			$this->db->where('menu_type', $arrData["menuType"]);
+		}
+		if (array_key_exists("columnOrder", $arrData)) {
+			$this->db->order_by($arrData["columnOrder"], 'asc');
+		}else{
+			$this->db->order_by('menu_order', 'asc');
+		}
+		
+		$query = $this->db->get('param_menu');
+
+		if ($query->num_rows() > 0) {
+			return $query->result_array();
+		} else {
+			return false;
+		}
+	}	
 
 	/**
 	 * Lista de roles

@@ -9,23 +9,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-    <title>YELOS</title>
+    <title>VCI</title>
 
     <!-- Bootstrap Core CSS -->
-	<link href="<?php echo base_url("assets/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
-	
-    <!-- Custom Fonts -->
-    <link href="<?php echo base_url("assets/bootstrap/font-awesome/css/font-awesome.css"); ?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url("assets/bootstrap/vendor/bootstrap/css/bootstrap.min.css"); ?>" rel="stylesheet">
 
-    <!-- Page-Level Plugin CSS - Dashboard -->
-    <link href="<?php echo base_url("assets/bootstrap/css/plugins/morris/morris-0.4.3.min.css"); ?>" rel="stylesheet">
-	<link href="<?php echo base_url("assets/bootstrap/css/plugins/timeline/timeline.css"); ?>" rel="stylesheet">
-	
+    <!-- MetisMenu CSS -->
+    <link href="<?php echo base_url("assets/bootstrap/vendor/metisMenu/metisMenu.min.css"); ?>" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="<?php echo base_url("assets/bootstrap/css/sb-admin.css"); ?>" rel="stylesheet"> 
+    <link href="<?php echo base_url("assets/bootstrap/dist/css/sb-admin-2.css"); ?>" rel="stylesheet">
 
+    <!-- Custom Fonts -->
+    <link href="<?php echo base_url("assets/bootstrap/vendor/font-awesome/css/font-awesome.min.css"); ?>" rel="stylesheet" type="text/css">
+	
     <!-- jQuery -->
-    <script src="<?php echo base_url("assets/bootstrap/js/jquery-1.10.2.js"); ?>"></script>	
+    <script src="<?php echo base_url("assets/bootstrap/vendor/jquery/jquery.min.js"); ?>"></script>
 	<!-- jQuery validate-->
 	<script type="text/javascript" src="<?php echo base_url("assets/js/general/general.js"); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url("assets/js/general/jquery.validate.js"); ?>"></script>
@@ -84,13 +83,6 @@
             </div>
         </div>
     </div>
-
-	<!-- Core Scripts - Include with every page -->
-	<script src="<?php echo base_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/bootstrap/js/plugins/metisMenu/jquery.metisMenu.js"); ?>"></script>
-
-    <!-- SB Admin Scripts - Include with every page -->
-	<script src="<?php echo base_url("assets/bootstrap/js/sb-admin.js"); ?>"></script>
 
 </body>
 
