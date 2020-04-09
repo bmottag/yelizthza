@@ -208,7 +208,7 @@ class Access extends CI_Controller {
 			$arrParam = array(
 				"idMenu" => $this->input->post('id_menu'),
 				"idLink" => $this->input->post('id_link'),
-				"idRole" => $this->input->post('id_rol')
+				"idRole" => $this->input->post('id_role')
 			);
 			$result_access = $this->general_model->get_role_access($arrParam);
 			
@@ -426,8 +426,8 @@ class Access extends CI_Controller {
 			$idPermiso = $this->input->post('identificador');
 			
 			$arrParam = array(
-				"table" => "param_menu_permisos",
-				"primaryKey" => "id_permiso",
+				"table" => "param_menu_access",
+				"primaryKey" => "id_access",
 				"id" => $idPermiso
 			);
 			

@@ -35,11 +35,12 @@
 						$user["logUser"] = $row->log_user;
 	    				$user["movil"] = $row->movil;
 						$user["state"] = $row->state;
-						$user["rol"] = $row->perfil;
+						$user["role"] = $row->fk_id_user_role;
 						$user["photo"] = $row->photo;
 	    			//}	    			
 	    		}
 	    	}
+			
 			
 			//var_dump($user); die();
 	    	$this->db->close();	    	
@@ -58,7 +59,7 @@
 			$inspectionType = $this->session->userdata("inspectionType");
 			$linkInspection = $this->session->userdata("linkInspection");
 			$state = $this->session->userdata("state");
-			$userRol = $this->session->userdata("rol");
+			$userRole = $this->session->userdata("rol");
 			$dashboardURL = $this->session->userdata("dashboardURL");
 
 			if($idVehicle != "x"){				

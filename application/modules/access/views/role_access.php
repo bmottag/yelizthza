@@ -90,16 +90,16 @@ if ($retornoError) {
 									echo "<td>" . $lista['menu_name'] . "</td>";
 									echo "<td>" . $lista['link_name'] . "</td>";
 									echo "<td class='text-center'>";
-									echo '<p class="' . $lista['estilos'] . '"><strong>' . $lista['rol_name'] . '</strong></p>';
+									echo '<p class="' . $lista['style'] . '"><strong>' . $lista['role_name'] . '</strong></p>';
 									echo "</td>";
 									
 									echo "<td class='text-center'>";
 						?>
-									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_permiso']; ?>" >
+									<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#modal" id="<?php echo $lista['id_access']; ?>" >
 										Edit <span class="glyphicon glyphicon-edit" aria-hidden="true">
 									</button>
 									
-									<button type="button" id="<?php echo $lista['id_permiso']; ?>" class='btn btn-danger btn-xs' title="Delete">
+									<button type="button" id="<?php echo $lista['id_access']; ?>" class='btn btn-danger btn-xs' title="Delete">
 											<i class="fa fa-trash-o"></i>
 									</button>
 						<?php

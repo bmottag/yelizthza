@@ -71,10 +71,10 @@ class Login extends CI_Controller {
 
 					if(($user["valid"] == true)) 
 					{
-						$userRol = intval($user["rol"]);
+						$userRole = intval($user["role"]);
 						//busco url del dashboard de acuerdo al rol del usuario
 						$arrParam = array(
-							"idRol" => $userRol
+							"idRole" => $userRole
 						);
 						$rolInfo = $this->general_model->get_roles($arrParam);
 
@@ -87,7 +87,7 @@ class Login extends CI_Controller {
 							"name" => $user["firstname"] . ' ' . $user["lastname"],
 							"logUser" => $user["logUser"],
 							"state" => $user["state"],
-							"rol" => $user["rol"],
+							"role" => $user["role"],
 							"photo" => $user["photo"],
 							"idVehicle" => $data['idVehicle'],
 							"inspectionType" => $data['inspectionType'],

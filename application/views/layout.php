@@ -51,18 +51,18 @@
 			
 			$leftMenu = '';
 			$topMenu = '';
-		
-			$userRol = $this->session->rol;
+
+			$userRole = $this->session->role;
 			//Left MENU 
 			$arrParam = array(
-				"idRole" => $userRol,
+				"idRole" => $userRole,
 				"menuType" => 1
 			);
 			$itemsLeftMenu = $this->general_model->get_role_menu($arrParam);
 
 			//Top MENU 
 			$arrParam = array(
-				"idRole" => $userRol,
+				"idRole" => $userRole,
 				"menuType" => 2
 			);
 			$itemsTopMenu = $this->general_model->get_role_menu($arrParam);		
@@ -80,7 +80,7 @@
 				}else{
 					//enlaces del menu
 					$arrParam = array(
-						"idRole" => $userRol,
+						"idRole" => $userRole,
 						"idMenu" => $item['fk_id_menu'],
 						"linkState" => 1,
 						"menuType" => 1
@@ -137,7 +137,7 @@
 				}else{
 					//enlaces del menu
 					$arrParam = array(
-						"idRole" => $userRol,
+						"idRole" => $userRole,
 						"idMenu" => $item['fk_id_menu'],
 						"linkState" => 1,
 						"menuType" => 2

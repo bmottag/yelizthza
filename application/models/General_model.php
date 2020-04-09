@@ -63,14 +63,14 @@ class General_model extends CI_Model {
 	public function get_roles($arrData) 
 	{		
 		if (array_key_exists("filtro", $arrData)) {
-			$this->db->where('id_rol !=', 99);
+			$this->db->where('id_role !=', 99);
 		}
-		if (array_key_exists("idRol", $arrData)) {
-			$this->db->where('id_rol', $arrData["idRol"]);
+		if (array_key_exists("idRole", $arrData)) {
+			$this->db->where('id_role', $arrData["idRole"]);
 		}
 		
-		$this->db->order_by('rol_name', 'asc');
-		$query = $this->db->get('param_rol');
+		$this->db->order_by('role_name', 'asc');
+		$query = $this->db->get('param_role');
 
 		if ($query->num_rows() > 0) {
 			return $query->result_array();
@@ -86,7 +86,7 @@ class General_model extends CI_Model {
 	public function get_user($arrData) 
 	{			
 		$this->db->select();
-		$this->db->join('param_rol R', 'R.id_rol = U.perfil', 'INNER');
+		$this->db->join('param_role R', 'R.id_role = U.fk_id_user_role', 'INNER');
 		if (array_key_exists("state", $arrData)) {
 			$this->db->where('U.state', $arrData["state"]);
 		}
@@ -142,13 +142,13 @@ class General_model extends CI_Model {
 	 */
 	public function get_role_access($arrData) 
 	{		
-		$this->db->select('P.id_permiso, P.fk_id_menu, P.fk_id_link, P.fk_id_rol, M.menu_name, M.menu_order, M.menu_type, L.link_name, L.link_url, L.order, L.link_icon, L.link_type, R.rol_name, R.estilos');
+		$this->db->select('P.id_access, P.fk_id_menu, P.fk_id_link, P.fk_id_role, M.menu_name, M.menu_order, M.menu_type, L.link_name, L.link_url, L.order, L.link_icon, L.link_type, R.role_name, R.style');
 		$this->db->join('param_menu M', 'M.id_menu = P.fk_id_menu', 'INNER');
 		$this->db->join('param_menu_links L', 'L.id_link = P.fk_id_link', 'LEFT');
-		$this->db->join('param_rol R', 'R.id_rol = P.fk_id_rol', 'INNER');
+		$this->db->join('param_role R', 'R.id_role = P.fk_id_role', 'INNER');
 		
 		if (array_key_exists("idPermiso", $arrData)) {
-			$this->db->where('id_permiso', $arrData["idPermiso"]);
+			$this->db->where('id_access', $arrData["idPermiso"]);
 		}
 		if (array_key_exists("idMenu", $arrData)) {
 			$this->db->where('P.fk_id_menu', $arrData["idMenu"]);
@@ -157,7 +157,7 @@ class General_model extends CI_Model {
 			$this->db->where('P.fk_id_link', $arrData["idLink"]);
 		}
 		if (array_key_exists("idRole", $arrData)) {
-			$this->db->where('P.fk_id_rol', $arrData["idRole"]);
+			$this->db->where('P.fk_id_role', $arrData["idRole"]);
 		}
 		if (array_key_exists("menuType", $arrData)) {
 			$this->db->where('M.menu_type', $arrData["menuType"]);
@@ -167,7 +167,7 @@ class General_model extends CI_Model {
 		}
 		
 		$this->db->order_by('M.menu_order, L.order', 'asc');
-		$query = $this->db->get('param_menu_permisos P');
+		$query = $this->db->get('param_menu_access P');
 
 		if ($query->num_rows() > 0) {
 			return $query->result_array();
@@ -187,7 +187,7 @@ class General_model extends CI_Model {
 		$this->db->join('param_menu M', 'M.id_menu = P.fk_id_menu', 'INNER');
 
 		if (array_key_exists("idRole", $arrData)) {
-			$this->db->where('P.fk_id_rol', $arrData["idRole"]);
+			$this->db->where('P.fk_id_role', $arrData["idRole"]);
 		}
 		if (array_key_exists("menuType", $arrData)) {
 			$this->db->where('M.menu_type', $arrData["menuType"]);
@@ -195,7 +195,7 @@ class General_model extends CI_Model {
 					
 		$this->db->group_by("P.fk_id_menu"); 
 		$this->db->order_by('M.menu_order', 'asc');
-		$query = $this->db->get('param_menu_permisos P');
+		$query = $this->db->get('param_menu_access P');
 
 		if ($query->num_rows() > 0) {
 			return $query->result_array();

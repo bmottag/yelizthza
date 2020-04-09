@@ -10,7 +10,7 @@
 
 <div class="modal-body">
 	<form name="form" id="form" role="form" method="post" >
-		<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information[0]["id_permiso"]:""; ?>"/>
+		<input type="hidden" id="hddId" name="hddId" value="<?php echo $information?$information[0]["id_access"]:""; ?>"/>
 		
 		<div class="row">
 			<div class="col-sm-6">
@@ -54,11 +54,11 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="form-group text-left">
-					<label class="control-label" for="id_rol">Rol name : *</label>
-					<select name="id_rol" id="id_rol" class="form-control" required>
+					<label class="control-label" for="id_role">Rol name : *</label>
+					<select name="id_role" id="id_role" class="form-control" required>
 						<option value="">Select...</option>
 						<?php for ($i = 0; $i < count($roles); $i++) { ?>
-							<option value="<?php echo $roles[$i]["id_rol"]; ?>" <?php if($information && $information[0]["fk_id_rol"] == $roles[$i]["id_rol"]) { echo "selected"; }  ?>><?php echo $roles[$i]["rol_name"]; ?></option>	
+							<option value="<?php echo $roles[$i]["id_role"]; ?>" <?php if($information && $information[0]["fk_id_role"] == $roles[$i]["id_role"]) { echo "selected"; }  ?>><?php echo $roles[$i]["role_name"]; ?></option>	
 						<?php } ?>
 					</select>
 				</div>

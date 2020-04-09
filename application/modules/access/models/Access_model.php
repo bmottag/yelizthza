@@ -145,16 +145,16 @@
 				$data = array(
 					'fk_id_menu' => $this->input->post('id_menu'),
 					'fk_id_link' => $this->input->post('id_link'),
-					'fk_id_rol' => $this->input->post('id_rol')
+					'fk_id_role' => $this->input->post('id_role')
 
 				);
 				
 				//revisar si es para adicionar o editar
 				if ($idPermiso == '') {
-					$query = $this->db->insert('param_menu_permisos', $data);			
+					$query = $this->db->insert('param_menu_access', $data);			
 				} else {
-					$this->db->where('id_permiso', $idPermiso);
-					$query = $this->db->update('param_menu_permisos', $data);
+					$this->db->where('id_access', $idPermiso);
+					$query = $this->db->update('param_menu_access', $data);
 				}
 				if ($query) {
 					return true;
